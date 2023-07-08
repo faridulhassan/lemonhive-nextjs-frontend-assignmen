@@ -1,12 +1,13 @@
+import { Feature } from "@/types";
 import Image from "next/image";
 import React from "react";
 
 export default function FeaturedCard({
   counter,
-  feature = {},
+  feature,
 }: {
   counter: number;
-  feature: object;
+  feature: Feature;
 }) {
   const { title, image, desc } = feature;
   return (

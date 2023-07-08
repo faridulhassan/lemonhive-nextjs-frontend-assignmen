@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-export const useAnimatedClass = (className, delay) => {
+export const useAnimatedClass = (className: string, delay: number) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {

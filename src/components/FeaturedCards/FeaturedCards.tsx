@@ -35,17 +35,17 @@ const _features: Feature[] = [
 export default function FeaturedCards({
   features = [..._features],
 }: {
-  features: Feature[];
+  features?: Feature[];
 }) {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
   useEffect(() => {
     const parent = ref.current,
       targetElements = parent.querySelectorAll(".feature-card");
 
-    const cards = gsap.utils.toArray(targetElements);
-    const allAnimations = [];
-    cards.forEach((card, i) => {
-      const animation = gsap.to(card, {
+    const cards = gsap.utils.toArray<HTMLElement>(targetElements);
+    const allAnimations: GSAPAnimation[] = [];
+    cards.forEach((card: HTMLElement, i) => {
+      const animation = gsap.to(card as HTMLElement, {
         // scale: () => 1 - (cards.length - i) * 0.09,
         filter: () => {
           return i !== cards.length - 1 ? "grayscale(0.8  )" : "grayscale(0)";
