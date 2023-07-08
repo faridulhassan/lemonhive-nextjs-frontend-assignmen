@@ -14,13 +14,17 @@ module.exports = {
       },
       backgroundColor: {
         primary: "#90E900",
+        "primary-200": "#D3F699",
         secondary: "#EFE600",
         neutral: "#1E2A37",
+        neutral2: "#172029",
       },
       colors: {
         primary: "#90E900",
+        "primary-200": "#D3F699",
         secondary: "#EFE600",
         neutral: "#1E2A37",
+        neutral2: "#172029",
       },
     },
     fontSize: {
@@ -34,6 +38,7 @@ module.exports = {
     },
     container: {
       center: true,
+      padding: "1rem",
     },
   },
   plugins: [],

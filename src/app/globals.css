@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply text-base;
+}
+/* Button */
+.btn {
+  @apply px-4 py-2 font-bold rounded-xl inline-block bg-primary text-white text-center cursor-pointer min-w-[150px];
+}
+.btn-outline {
+  /* @apply bg-transparent border border-primary; */
+  @apply min-w-[146px] py-3 px-6 rounded-3xl border border-primary  text-primary text-[16px] font-medium leading-tight tracking-wide cursor-pointer;
+}
+.btn-primary {
+  @apply min-w-[151px] py-3 px-6 bg-lime-300 rounded-3xl shadow justify-center items-center gap-4 inline-flex text-gray-800 text-[16px] font-medium leading-tight tracking-wide;
+}
+.btn-primary.btn-animation {
+  animation: btn-primary-animation 5s linear infinite both;
+}
+/* Text Animation */
+.text-primary-animation.active {
+  @apply text-primary;
+}
+.text-secondary-animation.active {
+  @apply text-secondary;
+}
+.text-gradient-animation {
+  background: linear-gradient(to right, #fff, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-animation.active {
+  background: linear-gradient(to right, #90e900, #efe600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes btn-primary-animation {
+  0% {
+    background: linear-gradient(to right, #efe600, #90e900);
+  }
+  40% {
+    background: linear-gradient(to right, #efe600, #90e900);
+  }
+  100% {
+    background: linear-gradient(to right, #90e900, #efe600);
+  }
+}
+.origin-top-center {
+  transform-origin: top center;
+}
+
+/* Mega Menu */
+.mega-menu {
+  position: relative;
+}
+.mega-menu > li {
+}
+.mega-menu > li > a {
+  position: relative;
+}
+.mega-menu > li:not(:last-child) > a::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #90e900;
+  left: 50%;
+  top: calc(100% + 4px);
+  transform: translateX(-50%);
+  position: absolute;
+  transition: all 0.3s;
+  opacity: 0;
+  /* pointer-events: none; */
+}
+.mega-menu > li.active > a,
+.mega-menu > li:hover > a {
+  color: #90e900;
+}
+.mega-menu > li.active > a::after,
+.mega-menu > li:hover > a::after {
+  opacity: 1;
+}
+.mega-menu ul {
+}
+.mega-menu ul > li {
+}

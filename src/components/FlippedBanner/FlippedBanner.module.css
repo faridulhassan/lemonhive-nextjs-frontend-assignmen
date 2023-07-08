@@ -1,0 +1,8 @@
+.flipped-image-container {
+  perspective: 1872px;
+  transform-style: preserve-3d;
+}
+
+.flipped-image {
+  transform: rotateX(36.6deg);
+}
