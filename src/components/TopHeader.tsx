@@ -1,12 +1,16 @@
 "use client";
 import { useAnimatedClass } from "@/app/hooks/hooks";
 import Link from "next/link";
-import React, { useRef, MutableRefObject } from "react";
+import React, { useRef, MutableRefObject, useEffect } from "react";
 
 export default function TopHeader() {
   const textAnimationWrapperRef =
     useRef() as MutableRefObject<HTMLHeadingElement>;
-  useAnimatedClass("text-color-animation", 3000);
+  const { setStartAnim } = useAnimatedClass("text-color-animation", 3000);
+
+  useEffect(() => {
+    setStartAnim(true);
+  }, []);
   return (
     <div className="text-center">
       <div>
